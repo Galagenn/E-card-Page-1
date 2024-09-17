@@ -8,6 +8,8 @@ export default defineConfig({
       rollupOptions: {
          input: {
             main: path.resolve(__dirname, "index.html"),
+            qrpage: path.resolve(__dirname, "qr-page.html"),
+
          },
       },
    },
