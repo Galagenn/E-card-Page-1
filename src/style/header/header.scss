@@ -1,0 +1,70 @@
+.header__back {
+  width: 430px;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer; /* Добавляем курсор указателя, чтобы было понятно, что можно кликнуть */
+  img{
+    border-radius: 0 0 32px 32px;
+  }
+
+  
+}
+
+#copyText{
+    position: relative;
+    z-index: 2;
+    font-size: 16px; /* Настройка размера шрифта */
+    color: #fff;     /* Настройка цвета текста */
+    user-select: none; /* Запрещаем выделение текста */
+    padding-left: 30px;
+    &:hover {
+      text-decoration: underline; /* Добавляем подчеркивание при наведении */
+    }
+}
+
+.menu{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding: 0 40px;
+  margin-top: 9rem;
+  color: #000;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  &__fist-child{
+    display: flex;
+  }
+  &__second-child{
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+  }
+  &__upload{
+
+    a{
+      width: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 100px;
+      img{
+        width: 16px;
+      }
+    }
+  }
+  &__qr{
+    img{
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &__param{
+    img{
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

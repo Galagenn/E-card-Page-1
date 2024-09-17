@@ -1,0 +1,62 @@
+<div class="header">
+  <div class="header__container">
+    <div class="header__back">
+      <img src="/public/img/header/background.png" alt="">
+    </div>      
+
+    <div class="header__menu menu">
+      <!-- Кнопка Сохранить с возможностью скачивания файла -->
+      <div class="menu__first-child"> 
+        <div class="menu__upload">
+          <a href="/vcard.vcf" download="vcard.vcf">
+            <img src="/public/img/header/downloaded.png" alt="">
+            <p>Сохранить</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="menu__second-child">
+        <a href="src/html/pages/qr-page.html" id="menuQrLink">
+          <img src="/public/img/header/qr-code.png" alt="QR Code" id="qrImage">
+        </a>
+        <a href="#" class="menu__param">
+          <img src="/public/img/header/settings.png" alt="">
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const link = document.getElementById('menuQrLink');
+    const img = document.getElementById('qrImage');
+    const currentPath = window.location.pathname;
+
+    // Проверяем состояние из localStorage
+    const savedState = localStorage.getItem('imageState');
+
+    // Если мы на странице qr-page.html
+    if (currentPath.includes('qr-page.html')) {
+      img.src = '/public/img/header/exit.png';
+      link.href = '/index.html';  // Меняем ссылку на главную страницу
+      localStorage.setItem('imageState', 'exit');
+    }
+    // Если мы на главной странице (index.html)
+    else if (currentPath.includes('index.html')) {
+      img.src = '/public/img/header/qr-code.png';
+      link.href = '/src/html/pages/qr-page.html';  // Меняем ссылку на страницу QR
+      localStorage.setItem('imageState', 'qr-code');
+    }
+
+    // При клике сохраняем соответствующее состояние
+    link.addEventListener('click', function() {
+      if (currentPath.includes('index.html')) {
+        localStorage.setItem('imageState', 'exit');
+      } else if (currentPath.includes('qr-page.html')) {
+        localStorage.setItem('imageState', 'qr-code');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,92 @@
+<section class="hero">
+   <div class="hero__container">
+      <div class="ProfileLayout_avatar__U9cVZ">
+         <div class="AvatarBlock_AvatarBlock__nRrQw">
+             <div class="AvatarBlock_AvatarBlock_preview__ZOy6_"><img alt="Avatar"
+                     src="/public/img/header/gos-gerb.png"
+                     width="100" height="100" decoding="async" data-nimg="future" class=""
+                     style="color:transparent" /></div>
+         </div>
+     </div>
+     
+      <div class="hero__top">
+         <div class="hero__avatar">
+            <div class="hero__avatar-border">
+               <img src="/public/img/hero/avatar.png" alt="">
+            </div>
+         </div>
+
+         <div class="hero__info">
+            <div class="hero__name">
+               <h4>СУЛЕЙМАН</h4>
+            </div>
+
+            <div class="hero__contacts">
+               <p>Тел:<span> + 7 702 149 1010</span></p>
+               <p>Почта:<span> ETag.store.kz@mail.ru</span></p>
+            </div>
+
+         </div>
+
+      </div>
+
+      <div class="hero__bottom">
+         <div class="container">
+            <button class="toggle-all" onclick="toggleAll()">СОЦИАЛЬНЫЕ СЕТИ</button>
+            <div class="buttons-wrapper">
+                <div class="button" onclick="toggleExpand(this)">
+                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/77085446945" target="_blank">НАПИСАТЬ НА WHATSAPP <br> + 7 702 149 1010</a>
+                </div>
+                                <!-- Кнопка для звонка -->
+                <div class="button" onclick="toggleExpand(this)">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+77021491010">ПОЗВОНИТЬ ПО НОМЕРУ <br> +7 702 149 1010</a>
+                </div>
+        
+                <div class="button" onclick="toggleExpand(this)">
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/kaznews/" target="_blank">ИНСТАГРАМ <br> @etag.kz</a>
+                </div>
+        
+                <div class="button" onclick="toggleExpand(this)">
+                    <i class="fab fa-telegram-plane"></i>
+                    <a href="https://t.me/SmMe1994" target="_blank">ТЕЛЕГРАММ  <br> @OlzhasKarimov</a>
+                </div>
+        
+                <div class="button" onclick="toggleExpand(this)">
+                    <i class="fab fa-tiktok"></i>
+                    <a href="https://www.tiktok.com/@etag.store.kz" target="_blank">TIK TOK <br> @etag.store.kz</a>
+                </div>
+        
+                <div class="button" onclick="toggleExpand(this)">
+                    <i class="fab fa-facebook-f"></i>
+                    <a href="https://www.facebook.com/profile.php?id=100055427777125" target="_blank">FACEBOOK <br> https://www.facebook.com/profile.php?id=100055427777125</a>
+                </div>
+        
+                <!-- Новая кнопка для электронной почты -->
+                <div class="button" onclick="toggleExpand(this)">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:ETag.store.kz@mail.ru">ЭЛЕКТРОННАЯ ПОЧТА <br> ETag.store.kz@mail.ru</a>
+                </div>
+        
+            </div>
+        </div>
+        
+      </div>         
+
+   </div>
+</section>
+
+<script>
+     function toggleAll() {
+    const buttonsWrapper = document.querySelector('.buttons-wrapper');
+    if (buttonsWrapper.classList.contains('show')) {
+        buttonsWrapper.style.maxHeight = null;
+        buttonsWrapper.classList.remove('show');
+    } else {
+        buttonsWrapper.classList.add('show');
+        buttonsWrapper.style.maxHeight = buttonsWrapper.scrollHeight + "px";
+    }
+}
+</script>
