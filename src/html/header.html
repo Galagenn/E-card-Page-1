@@ -37,25 +37,25 @@
     // Проверяем состояние из localStorage
     const savedState = localStorage.getItem('imageState');
 
-    // Если мы на странице qr-page.html
-    if (currentPath.includes('qr-page.html')) {
+    // Если мы на странице qrpage.html
+    if (currentPath.includes('qrpage.html')) {
       img.src = '/public/img/header/exit.png';
       link.href = '/index.html';  // Меняем ссылку на главную страницу
       localStorage.setItem('imageState', 'exit');
     }
     // Если мы на главной странице (index.html)
     else if (currentPath.includes('index.html')) {
-      img.src = '/public/img/header/qr-code.png';
-      link.href = '/src/html/pages/qr-page.html';  // Меняем ссылку на страницу QR
-      localStorage.setItem('imageState', 'qr-code');
+      img.src = '/public/img/header/qrcode.png';
+      link.href = '/src/html/pages/qrpage.html';  // Меняем ссылку на страницу QR
+      localStorage.setItem('imageState', 'qrcode');
     }
 
     // При клике сохраняем соответствующее состояние
     link.addEventListener('click', function() {
       if (currentPath.includes('index.html')) {
         localStorage.setItem('imageState', 'exit');
-      } else if (currentPath.includes('qr-page.html')) {
-        localStorage.setItem('imageState', 'qr-code');
+      } else if (currentPath.includes('qrpage.html')) {
+        localStorage.setItem('imageState', 'qrcode');
       }
     });
   });
