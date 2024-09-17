@@ -9,7 +9,6 @@ export default defineConfig({
          input: {
             main: path.resolve(__dirname, "index.html"),
             qrpage: path.resolve(__dirname, "qr-page.html"),
-
          },
       },
    },
@@ -19,5 +18,3 @@ export default defineConfig({
       }
     }
 });
-
-

@@ -1,0 +1,13 @@
+{
+    "rewrites": [
+      {
+        "source": "/src/html/pages/qr-page.html",
+        "destination": "/src/html/pages/qr-page.html"
+      },
+      {
+        "source": "/(.*)",  
+        "destination": "/index.html" 
+      }
+      
+    ]
+  }
