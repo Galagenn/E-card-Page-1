@@ -9,6 +9,9 @@ export default defineConfig({
          input: {
             main: path.resolve(__dirname, "index.html"),
             qrpage: path.resolve(__dirname, "src/html/pages/qrpage.html"),
+            register: path.resolve(__dirname, "src/html/pages/regirster.html"),
+            add: path.resolve(__dirname, "src/html/pages/add.html"),
+
          },
       },
    },
