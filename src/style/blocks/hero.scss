@@ -4,7 +4,7 @@
   &__top{
     display: flex;
     justify-content:left;
-    padding-left: 46px;
+    padding-left: 14px;
  }
   &__avatar{
     max-width: 80px;
@@ -30,7 +30,6 @@
     flex-direction: column;
     justify-content: center;
     height: 66px;
-    width: 183px;
   }
   &__name{
     h4{
@@ -49,7 +48,6 @@
     p{
       /* Тел: + 7 702 149 1010 */
       color: rgb(128, 128, 128);
-      font-family: Inter;
       font-size: 13px;
       font-weight: 400;
       letter-spacing: 0%;
