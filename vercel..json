@@ -5,6 +5,14 @@
         "destination": "/src/html/pages/qrpage.html"
       },
       {
+        "source": "/src/html/pages/regirster.html",
+        "destination": "/src/html/pages/regirster.html"
+      },
+      {
+        "source": "/src/html/pages/add.html",
+        "destination": "/src/html/pages/add.html"
+      },
+      {
         "source": "/(.*)",  
         "destination": "/index.html" 
       }
