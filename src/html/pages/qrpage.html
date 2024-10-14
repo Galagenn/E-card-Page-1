@@ -1,22 +1,160 @@
 <!DOCTYPE html>
 <html lang="ru">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>E-card</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-   </head>
-   <body>
-      <div class="wrapper">
-         <load src="src/html/header.html" />
-         <main class="main">
-            <load src="src/html/blocks/qrsection.html" />
-         </main>
-         <load src="src/html/footer.html" />
+<head>
+   <meta charset="UTF-8" />
+   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>E-card</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+   <div class="wrapper">
+
+      <div class="header">
+         <div class="header__container">
+            <div class="header__back">
+               <img src="/public/img/header/background.png" alt="">
+            </div>
+
+            <div class="header__menu menu">
+               <!-- Кнопка Сохранить с возможностью скачивания файла -->
+               <div class="menu__first-child">
+                  <div class="menu__upload">
+                     <a href="/vcard.vcf" download="vcard.vcf">
+                        <img src="/public/img/header/downloaded.png" alt="">
+                        <p>Сохранить</p>
+                     </a>
+                  </div>
+               </div>
+
+               <div class="menu__second-child">
+                  <a href="src/html/pages/qrpage.html" id="menuQrLink">
+                     <img src="img/header/qrcode.png" alt="QR Code" id="qrImage">
+                  </a>
+                  <a href="/src/html/pages/regirster.html" class="menu__param">
+                     <img src="/public/img/header/settings.png" alt="">
+                  </a>
+               </div>
+            </div>
+
+         </div>
       </div>
-      <script type="module" src="/src/js/main.js"></script>
-   </body>
+
+
+      <main class="main">
+
+         <section class="qr-section">
+            <div class="ProfileLayout_avatar__U9cVZ">
+              <div class="AvatarBlock_AvatarBlock__nRrQw">
+                <div class="AvatarBlock_AvatarBlock_preview__ZOy6_">
+                  <img alt="Avatar" src="/public/img/header/gos-gerb.png" width="100" height="100" decoding="async" data-nimg="future" class="" style="color:transparent" />
+                </div>
+              </div>
+            </div>
+            
+            <div class="qr-section__container">
+              <!-- Кнопка поделиться -->
+              <a href="#" class="qr-btn" id="share-btn">Поделиться <i class="fas fa-share-alt"></i></a>
+              
+              <!-- QR код -->
+              <div class="qr-code">
+                <img src="/public/img/qr-section/qrcode.png" alt="QR Code">
+              </div>
+          
+              <!-- Кнопка сохранить -->
+              <a href="#" class="qr-btn" id="save-btn">Сохранить <i class="fas fa-download"></i></a>
+            </div>
+          </section>
+
+      </main>
+
+      <section class="footer" id="footer">
+         <div class="footer__container">
+            <div class="footer__title">
+               <p> © 2020-2024 Будущее нетворкинга</p>
+            </div>
+            <div class="footer__link">
+               <a href="https://e-card-page-1.vercel.app/index.html">Где купить?</a>
+            </div>
+         </div>
+      </section>
+
+   </div>
+
+
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         const link = document.getElementById('menuQrLink');
+         const img = document.getElementById('qrImage');
+         const currentPath = window.location.pathname;
+
+         // Проверяем состояние из localStorage
+         const savedState = localStorage.getItem('imageState');
+
+         // Если мы на странице qrpage.html
+         if (currentPath.includes('qrpage.html')) {
+            img.src = '/img/header/exit.png';
+            link.href = '/index.html';  // Меняем ссылку на главную страницу
+            localStorage.setItem('imageState', 'exit');
+         }
+         // Если мы на главной странице (index.html)
+         else if (currentPath.includes('index.html')) {
+            img.src = '/img/header/qrcode.png';
+            link.href = '/src/html/pages/qrpage.html';  // Меняем ссылку на страницу QR
+            localStorage.setItem('imageState', 'qrcode');
+         }
+
+         // При клике сохраняем соответствующее состояние
+         link.addEventListener('click', function () {
+            if (currentPath.includes('index.html')) {
+               localStorage.setItem('imageState', 'exit');
+            } else if (currentPath.includes('qrpage.html')) {
+               localStorage.setItem('imageState', 'qrcode');
+            }
+         });
+      });
+            
+            document.addEventListener('DOMContentLoaded', function() {
+              // Обработчик для кнопки "Сохранить"
+              const saveBtn = document.getElementById('save-btn');
+              saveBtn.addEventListener('click', function(event) {
+                event.preventDefault();  // Отключаем стандартное поведение ссылки
+                
+                // Создаем ссылку для скачивания файла
+                const link = document.createElement('a');
+                link.href = '/vcard.vcf';  // Замените на реальный путь к вашему .vcf файлу
+                link.download = 'vcard.vcf';  // Имя файла при скачивании
+                link.click();  // Программно кликаем по ссылке
+              });
+          
+              // Обработчик для кнопки "Поделиться"
+              const shareBtn = document.getElementById('share-btn');
+              shareBtn.addEventListener('click', async function(event) {
+                event.preventDefault();  // Отключаем стандартное поведение ссылки
+          
+                if (navigator.share) {
+                  try {
+                    await navigator.share({
+                      title: 'https://github.com/Galagenn',
+                      url: window.location.href,  // Ссылка на текущий сайт
+                    });
+                    console.log('Успешно поделились');
+                  } catch (error) {
+                    console.error('Ошибка при попытке поделиться', error);
+                  }
+                } else {
+                  alert('Ваш браузер не поддерживает функцию поделиться.');
+                }
+              });
+            });
+
+   </script>
+
+   <script type="module" src="src/js/main.js"></script>
+
+</body>
+
 </html>
-
-

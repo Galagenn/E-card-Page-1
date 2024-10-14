@@ -1,25 +1,194 @@
 <!DOCTYPE html>
 <html lang="ru">
-   <head>
-      <meta charset="UTF-8" />
-      <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>E-card</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-   </head>
-   <body>
-      <div class="wrapper">
-         <load src="src/html/header.html" />
-         <main class="main">
-            <load src="src/html/blocks/hero.html" />
-         </main>
-         <load src="src/html/footer.html" />
+<head>
+   <meta charset="UTF-8" />
+   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>E-card</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+   <div class="wrapper">
+
+      <div class="header">
+         <div class="header__container">
+            <div class="header__back">
+               <img src="/public/img/header/background.png" alt="">
+            </div>
+
+            <div class="header__menu menu">
+               <!-- Кнопка Сохранить с возможностью скачивания файла -->
+               <div class="menu__first-child">
+                  <div class="menu__upload">
+                     <a href="/vcard.vcf" download="vcard.vcf">
+                        <img src="/public/img/header/downloaded.png" alt="">
+                        <p>Сохранить</p>
+                     </a>
+                  </div>
+               </div>
+
+               <div class="menu__second-child">
+                  <a href="src/html/pages/qrpage.html" id="menuQrLink">
+                     <img src="img/header/qrcode.png" alt="QR Code" id="qrImage">
+                  </a>
+                  <a href="/src/html/pages/regirster.html" class="menu__param">
+                     <img src="/public/img/header/settings.png" alt="">
+                  </a>
+               </div>
+            </div>
+
+         </div>
       </div>
-      <script type="module" src="src/js/main.js"></script>
 
 
-       
-       
-   </body>
+      <main class="main">
+
+         <section class="hero">
+            <div class="hero__container">
+               <div class="ProfileLayout_avatar__U9cVZ">
+                  <div class="AvatarBlock_AvatarBlock__nRrQw">
+                     <div class="AvatarBlock_AvatarBlock_preview__ZOy6_"><img alt="Avatar"
+                           src="/public/img/header/gos-gerb.png" width="100" height="100" decoding="async"
+                           data-nimg="future" class="" style="color:transparent" /></div>
+                  </div>
+               </div>
+
+               <div class="hero__top">
+                  <div class="hero__avatar">
+                     <div class="hero__avatar-border">
+                        <img src="/public/img/hero/avatar.png" alt="">
+                     </div>
+                  </div>
+
+                  <div class="hero__info">
+                     <div class="hero__name">
+                        <h4>СУЛЕЙМАН</h4>
+                     </div>
+
+                     <div class="hero__contacts">
+                        <p>Тел:<span> + 7 702 149 1010</span></p>
+                        <p>Почта:<span> ETag.store.kz@mail.ru</span></p>
+                     </div>
+
+                  </div>
+
+               </div>
+
+               <div class="hero__bottom">
+                  <div class="container">
+                     <button class="toggle-all" onclick="toggleAll()">СОЦИАЛЬНЫЕ СЕТИ</button>
+                     <div class="buttons-wrapper">
+                        <div class="button" onclick="toggleExpand(this)">
+                           <i class="fab fa-whatsapp"></i>
+                           <a href="https://wa.me/77085446945" target="_blank">НАПИСАТЬ НА WHATSAPP <br> + 7 702 149
+                              1010</a>
+                        </div>
+                        <!-- Кнопка для звонка -->
+                        <div class="button" onclick="toggleExpand(this)">
+                           <i class="fas fa-phone"></i>
+                           <a href="tel:+77021491010">ПОЗВОНИТЬ ПО НОМЕРУ <br> +7 702 149 1010</a>
+                        </div>
+
+                        <div class="button" onclick="toggleExpand(this)">
+                           <i class="fab fa-instagram"></i>
+                           <a href="https://www.instagram.com/kaznews/" target="_blank">ИНСТАГРАМ <br> @etag.kz</a>
+                        </div>
+
+                        <div class="button" onclick="toggleExpand(this)">
+                           <i class="fab fa-telegram-plane"></i>
+                           <a href="https://t.me/SmMe1994" target="_blank">ТЕЛЕГРАММ <br> @OlzhasKarimov</a>
+                        </div>
+
+                        <div class="button" onclick="toggleExpand(this)">
+                           <i class="fab fa-tiktok"></i>
+                           <a href="https://www.tiktok.com/@etag.store.kz" target="_blank">TIK TOK <br>
+                              @etag.store.kz</a>
+                        </div>
+
+                        <div class="button" onclick="toggleExpand(this)">
+                           <i class="fab fa-facebook-f"></i>
+                           <a href="https://www.facebook.com/profile.php?id=100055427777125" target="_blank">FACEBOOK
+                              <br> https://www.facebook.com/profile.php?id=100055427777125</a>
+                        </div>
+
+                        <!-- Новая кнопка для электронной почты -->
+                        <div class="button" onclick="toggleExpand(this)">
+                           <i class="fas fa-envelope"></i>
+                           <a href="mailto:ETag.store.kz@mail.ru">ЭЛЕКТРОННАЯ ПОЧТА <br> ETag.store.kz@mail.ru</a>
+                        </div>
+
+                     </div>
+                  </div>
+
+               </div>
+
+            </div>
+         </section>
+
+      </main>
+
+      <section class="footer" id="footer">
+         <div class="footer__container">
+            <div class="footer__title">
+               <p> © 2020-2024 Будущее нетворкинга</p>
+            </div>
+            <div class="footer__link">
+               <a href="https://e-card-page-1.vercel.app/index.html">Где купить?</a>
+            </div>
+         </div>
+      </section>
+
+   </div>
+
+
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         const link = document.getElementById('menuQrLink');
+         const img = document.getElementById('qrImage');
+         const currentPath = window.location.pathname;
+
+         // Проверяем состояние из localStorage
+         const savedState = localStorage.getItem('imageState');
+
+         // Если мы на странице qrpage.html
+         if (currentPath.includes('qrpage.html')) {
+            img.src = '/img/header/exit.png';
+            link.href = '/index.html';  // Меняем ссылку на главную страницу
+            localStorage.setItem('imageState', 'exit');
+         }
+         // Если мы на главной странице (index.html)
+         else if (currentPath.includes('index.html')) {
+            img.src = '/img/header/qrcode.png';
+            link.href = '/src/html/pages/qrpage.html';  // Меняем ссылку на страницу QR
+            localStorage.setItem('imageState', 'qrcode');
+         }
+
+         // При клике сохраняем соответствующее состояние
+         link.addEventListener('click', function () {
+            if (currentPath.includes('index.html')) {
+               localStorage.setItem('imageState', 'exit');
+            } else if (currentPath.includes('qrpage.html')) {
+               localStorage.setItem('imageState', 'qrcode');
+            }
+         });
+      });
+      function toggleAll() {
+         const buttonsWrapper = document.querySelector('.buttons-wrapper');
+         if (buttonsWrapper.classList.contains('show')) {
+            buttonsWrapper.style.maxHeight = null;
+            buttonsWrapper.classList.remove('show');
+         } else {
+            buttonsWrapper.classList.add('show');
+            buttonsWrapper.style.maxHeight = buttonsWrapper.scrollHeight + "px";
+         }
+      }
+   </script>
+
+   <script type="module" src="src/js/main.js"></script>
+
+</body>
+
 </html>

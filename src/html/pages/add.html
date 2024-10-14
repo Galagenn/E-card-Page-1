@@ -1,22 +1,116 @@
 <!DOCTYPE html>
 <html lang="ru">
-   <head>
-      <meta charset="UTF-8" />
-      <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>E-card</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-   </head>
-   <body class="page-register">
+<head>
+   <meta charset="UTF-8" />
+   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>E-card</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <link rel="stylesheet" href="./style/style.scss">
 
-      <div class="wrapper">
-         <load src="src/html/blocks/registerHeader.html" />
-         <main class="main">
-            <load src="src/html/blocks/add-form.html" />
-         </main>
-         <load src="src/html/blocks/registerFooter.html" />
+</head>
+
+<body class="page-register">
+
+   </style>
+   <div class="wrapper" id="regirsterWidth">
+
+      <div class="registerheader">
+         <div class="registerheader__container">
+            <div class="registerheader__back">
+               <img src="/public/img/registerHeader/background.jpg" alt="">
+            </div>
+            <p id="copyText">eTag</p>
+            <p>Привет, я eTag!</p>
+
+            <div class="registerheader__registration-button">
+               <a class="registerheader__register" href="/src/html/pages/regirster.html" id="register">Создать новый</a>
+               <a class="registerheader__add" href="/src/html/pages/add.html" id="add">Войти</a>
+
+            </div>
+
+         </div>
+
       </div>
-      <script type="module" src="/src/js/main.js"></script>
-   </body>
+
+      <main class="main">
+
+         <section class="add-form">
+            <div class="add-form__container">
+                <div class="ContentLayout_ContentLayout__VEBjn">
+                    <div class="form-container">
+                        <form action="#">
+                            <div class="form-group">
+                                <label for="email">Ваш e-mail</label>
+                                <input type="email" id="email" name="email" placeholder="example@mail.com">
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="password">Пароль</label>
+                                <div class="password-wrapper">
+                                    <input type="password" id="password" name="password" placeholder="Введите пароль">
+                                    <span class="toggle-password" onclick="togglePassword('password', this)">
+                                        <i style="max-width: 18px;" class="fas fa-eye"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+        
+                    </div>
+                
+        
+                </div><!--/$-->
+                <button data-tour="form-submit" type="submit" class="Button_Button__zmFXg">Войти</button>
+                </form>
+                <div class="Policies_policy__cSxku">Нажимая кнопку «Войти» , вы даете<!-- --> <span role="button"
+                        tabindex="0">согласие на обработку персональных данных</span> <!-- -->и
+                    соглашаетесь с<!-- --> <span role="button" tabindex="0">политикой конфиденциальности</span>
+                </div>
+            </div>
+            </div>
+        
+            </div>
+        </section>
+        
+   
+        
+        
+      </main>
+
+      <section class="registerfooter">
+         <div class="registerfooter__container">
+            <div class="registerfooter__title">
+               <p> © 2020-2024 Будущее нетворкинга</p>
+            </div>
+            <div class="registerfooter__link">
+               <a href="https://e-card-page-1.vercel.app/index.html">Где купить?</a>
+            </div>
+         </div>
+      </section>
+
+   </div>
+
+         <script>
+            function togglePassword(inputId, icon) {
+                const input = document.getElementById(inputId);
+                const iconElement = icon.querySelector('i');
+        
+                if (input.type === "password") {
+                    input.type = "text";
+                    // Меняем иконку на "глаз с закрытием"
+                    iconElement.classList.remove('fa-eye');
+                    iconElement.classList.add('fa-eye-slash');
+                } else {
+                    input.type = "password";
+                    // Меняем иконку на "глаз открытый"
+                    iconElement.classList.remove('fa-eye-slash');
+                    iconElement.classList.add('fa-eye');
+                }
+            }
+        </script>
+
+   <script type="module" src="/src/js/main.js"></script>
+</body>
+
 </html>
