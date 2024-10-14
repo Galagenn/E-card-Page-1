@@ -11,6 +11,7 @@ export default defineConfig({
             qrpage: path.resolve(__dirname, "src/html/pages/qrpage.html"),
             register: path.resolve(__dirname, "src/html/pages/regirster.html"),
             add: path.resolve(__dirname, "src/html/pages/add.html"),
+            registerForm: path.resolve(__dirname, "src/html/pages/regirster-form-page.html"),
 
          },
       },

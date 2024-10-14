@@ -13,6 +13,11 @@
         "destination": "/src/html/pages/add.html"
       },
       {
+        "source": "/src/html/pages/regirster-form-page.html",
+        "destination": "/src/html/pages/regirster-form-page.html"
+      },
+      
+      {
         "source": "/(.*)",  
         "destination": "/index.html" 
       }
